@@ -1,6 +1,25 @@
-import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "../components/ui/card";
+import { useState } from "react";
+import { CardAviso } from "../components/CardAviso";
 
 function Home() {
+
+    const [cardsAvisos, setCardsAvisos] = useState([
+        {
+            id: 1,
+            titulo: "Jogo de futebol",
+            descricao: "Jogo entre Flamengo x Palmeiras pelo brasileirão",
+            categoria: "Evento",
+            data: "20/03/2026",
+        },
+        {
+            id: 2,
+            titulo: "Exposição de Artes 2026",
+            descricao: "Preparem suas telas! A nossa exposição anual acontecerá no pátio central...",
+            categoria: "Evento",
+            data: "24/03/2026",
+        }
+    ]);
+
   return (
     <div 
         className="
@@ -52,55 +71,12 @@ function Home() {
                 gap-6
                 sm:grid-cols-2"
         >
-            <Card>
-                <CardHeader>
-                    <div className="
-                        flex justify-between mb-1
-                        text-sm"
-                    >
-                        <p>EVENTO</p>
-                        <p>18 Mar</p>
-                    </div>
-                    <CardTitle 
-                        className="font-bold text-lg"
-                    >
-                        Exposição de Artes 2026
-                    </CardTitle>
-                    <CardDescription>
-                        Preparem suas telas! A nossa
-                        exposição anual acontecerá no 
-                        pátio central...
-                    </CardDescription>
-                </CardHeader>
-                <CardFooter className="text-blue-400 font-medium">
-                    <a href="/">Saiba mais...</a>
-                </CardFooter>
-            </Card>
-
-            <Card>
-                <CardHeader>
-                    <div className="
-                        flex justify-between mb-1
-                        text-sm"
-                    >
-                        <p>EVENTO</p>
-                        <p>18 Mar</p>
-                    </div>
-                    <CardTitle 
-                        className="font-bold text-lg"
-                    >
-                        Exposição de Artes 2026
-                    </CardTitle>
-                    <CardDescription>
-                        Preparem suas telas! A nossa
-                        exposição anual acontecerá no 
-                        pátio central...
-                    </CardDescription>
-                </CardHeader>
-                <CardFooter className="text-blue-400 font-medium">
-                    <a href="/">Saiba mais...</a>
-                </CardFooter>
-            </Card>
+            {cardsAvisos.map((aviso) => (
+                <CardAviso
+                    key={aviso.id}
+                    {...aviso}
+                />
+            ))}
         </div>
     </div>
   )
