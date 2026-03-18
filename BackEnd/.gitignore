@@ -1,0 +1,10 @@
+.env
+
+node_modules
+
+/src/generated/
+prisma/client/
+
+npm-debug.log*
+.DS_Store
+Thumbs.db
