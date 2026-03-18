@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./pages/home";
+import { CriarAviso } from "./pages/CriarAviso";
 
 function App() {
 
@@ -9,6 +10,7 @@ function App() {
       <Header/>
       <Routes>
         <Route path="/" element={<Home/>}/>
+        <Route path="/criarAviso" element={<CriarAviso/>}/>
       </Routes>
     </BrowserRouter>
   )

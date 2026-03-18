@@ -3,7 +3,7 @@ import { CardAviso } from "../components/CardAviso";
 
 function Home() {
 
-    const [cardsAvisos, setCardsAvisos] = useState([
+    const [cardsAvisos] = useState([
         {
             id: 1,
             titulo: "Jogo de futebol",
@@ -51,7 +51,7 @@ function Home() {
                     font-medium
                     hover:bg-blue-200"
             >
-                        Todos
+                Todos
             </span>
             <span
                 className="

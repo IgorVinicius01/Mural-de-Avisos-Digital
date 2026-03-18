@@ -56,7 +56,7 @@ function Header() {
                         </Link>  
 
                         <Link
-                            to="/"
+                            to="/criarAviso"
                             className="
                                 pl-2
                                 py-1
@@ -64,7 +64,7 @@ function Header() {
                                 hover:bg-blue-200 rounded-sm
                                 sm:text-2xl"
                         >
-                            Meus avisos
+                            Criar novo aviso
                         </Link>
 
                         <Link
