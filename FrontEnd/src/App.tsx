@@ -1,15 +1,16 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Header from "./components/Header";
 import Home from "./pages/home";
 import { CriarAviso } from "./pages/CriarAviso";
+import { Login } from "./pages/Login";
 
 function App() {
 
   return (
     <BrowserRouter>
-      <Header/>
       <Routes>
-        <Route path="/" element={<Home/>}/>
+        <Route path="/" element={<Login/>}/>
+
+        <Route path="/home" element={<Home/>}/>
         <Route path="/criarAviso" element={<CriarAviso/>}/>
       </Routes>
     </BrowserRouter>

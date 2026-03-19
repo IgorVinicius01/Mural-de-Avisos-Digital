@@ -44,7 +44,7 @@ function Header() {
                             px-4
                             mb-4">
                         <Link
-                            to="/"
+                            to="/home"
                             className="
                                 pl-2
                                 py-1

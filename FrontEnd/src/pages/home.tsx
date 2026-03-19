@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { CardAviso } from "../components/CardAviso";
+import Header from "../components/Header";
 
 function Home() {
 
@@ -21,64 +22,69 @@ function Home() {
     ]);
 
   return (
-    <div 
-        className="
-            max-w-6xl mx-auto p-6"
-    >
-        <div>
-            <input 
-                type="text" 
-                placeholder="Buscar avisos..."
-                className="
-                    w-full 
-                    p-2
-                    border-2 rounded-sm"
-            />
-        </div>
+    <div className="min-h-screen">
+        <Header/>
 
         <div 
             className="
-                flex gap-3
-                my-6
-                justify-center
-                items-center"
+                max-w-6xl mx-auto p-6"
         >
-            <span 
+            <div>
+                <input 
+                    type="text" 
+                    placeholder="Buscar avisos..."
+                    className="
+                        w-full 
+                        p-2
+                        border-2 rounded-sm"
+                />
+            </div>
+
+            <div 
                 className="
-                    bg-blue-100 text-blue-600 
-                    px-3 py-0.5 rounded-2xl 
+                    flex gap-3
+                    my-6
+                    justify-center
+                    items-center"
+            >
+                <span 
+                    className="
+                        bg-blue-100 text-blue-600 
+                        px-3 py-0.5 rounded-2xl 
+                        cursor-pointer
+                        font-medium
+                        hover:bg-blue-200"
+                >
+                    Todos
+                </span>
+                <span
+                    className="
+                    bg-gray-200 text-gray-700
+                    px-3 py-0.5 rounded-2xl
                     cursor-pointer
                     font-medium
-                    hover:bg-blue-200"
-            >
-                Todos
-            </span>
-            <span
-                className="
-                bg-gray-200 text-gray-700
-                px-3 py-0.5 rounded-2xl
-                cursor-pointer
-                font-medium
-                hover:bg-red-200 hover:text-red-500"
-            >
-                Urgentes
-            </span>
-        </div>
+                    hover:bg-red-200 hover:text-red-500"
+                >
+                    Urgentes
+                </span>
+            </div>
 
-        <div 
-            className="
-                grid grid-cols-1
-                gap-6
-                sm:grid-cols-2"
-        >
-            {cardsAvisos.map((aviso) => (
-                <CardAviso
-                    key={aviso.id}
-                    {...aviso}
-                />
-            ))}
+            <div 
+                className="
+                    grid grid-cols-1
+                    gap-6
+                    sm:grid-cols-2"
+            >
+                {cardsAvisos.map((aviso) => (
+                    <CardAviso
+                        key={aviso.id}
+                        {...aviso}
+                    />
+                ))}
+            </div>
         </div>
     </div>
+    
   )
 }
 
